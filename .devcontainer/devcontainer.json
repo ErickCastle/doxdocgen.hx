@@ -1,0 +1,32 @@
+{
+  "name": "doxdocgen.hx",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+    "args": {
+      "HELIX_REF": "5a8635beda77414850a2b9604aa0643e4713db3b"
+    }
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "HELIX_SRC": "/opt/helix",
+    "HELIX_RUNTIME": "/opt/helix/runtime",
+    "STEEL_HOME": "/opt/steel",
+    "STEEL_LSP_HOME": "/opt/steel/lsp"
+  },
+  "mounts": [
+    "source=doxdocgen-helix-target,target=/opt/helix/target,type=volume"
+  ],
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.associations": {
+          "*.scm": "scheme"
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": []
+    }
+  }
+}

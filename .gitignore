@@ -1,0 +1,8 @@
+# Compiled tree-sitter grammars
+*.so
+
+# Test scratch space
+tests/tmp/
+
+# Cargo output, if the Helix fork is ever built in-tree
+target/
